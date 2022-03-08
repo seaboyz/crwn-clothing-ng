@@ -1,0 +1,12 @@
+<div class="directory">
+  <div class="menu-item" *ngFor="let section of sections">
+    <div
+      class="backgroundl-image"
+      [style.background-image]="url(section.imageUrl)"
+    ></div>
+    <div class="content">
+      <h1 class="title">{{ section.title }}</h1>
+      <span class="subtitle">SHOP NOW</span>
+    </div>
+  </div>
+</div>
