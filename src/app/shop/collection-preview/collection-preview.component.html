@@ -1,0 +1,10 @@
+<div class="collection-preview">
+  <h1 class="title">{{ collection.title }}</h1>
+  <div class="preview">
+    <app-collection-item
+      class="collection-item"
+      *ngFor="let shopItem of collection.items.slice(0, 4)"
+      [product]="shopItem"
+    ></app-collection-item>
+  </div>
+</div>
