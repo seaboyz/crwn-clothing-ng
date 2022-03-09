@@ -13,7 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 import { HeaderComponent } from './header/header.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { HeaderComponent } from './header/header.component';
     CollectionItemComponent,
     SignInComponent,
     HeaderComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,7 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

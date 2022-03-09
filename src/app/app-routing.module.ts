@@ -7,6 +7,7 @@ import {
   AngularFireAuthGuard,
   redirectLoggedInTo,
 } from '@angular/fire/compat/auth-guard';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: '', component: DirectoryComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectLoggedInTo },
   },
+  { path: 'signup', component: SignUpComponent },
   { path: '**', redirectTo: '/' },
 ];
 

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 import { Observable } from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +19,10 @@ export class AuthService {
 
   logout() {
     this.auth.signOut();
+  }
+
+  signUp(email: string, password: string) {
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
   signInWithGoogle() {
