@@ -1,0 +1,38 @@
+<h2>I already have an account</h2>
+<span>Sign in with your eamil and password</span>
+<form (ngSubmit)="onSubmit()" #signInForm="ngForm">
+  <div class="group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-input"
+      id="email"
+      required
+      name="email"
+      [(ngModel)]="email"
+    />
+  </div>
+  <div class="group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-input"
+      id="password"
+      required
+      name="password"
+      [(ngModel)]="password"
+    />
+  </div>
+  <div style="display: flex; justify-content: space-between">
+    <button
+      class="custom-button"
+      type="submit"
+      [disabled]="!signInForm.form.valid"
+    >
+      Sign In
+    </button>
+    <button type="button" (click)="signInWithGoogle()" class="custom-button">
+      Sign In With Google
+    </button>
+  </div>
+</form>

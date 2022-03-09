@@ -1,0 +1,15 @@
+<header>
+  <a class="logo-container" routerLink="/">
+    <img class="logo" src="/assets/logo.svg" alt="" />
+  </a>
+  <div class="options">
+    <a class="option" routerLink="shop">Shop</a>
+
+    <a *ngIf="user$ | async; else signin" class="option" (click)="signOut()"
+      >Sign Out</a
+    >
+    <ng-template #signin class="option">
+      <a routerLink="signin">Sign In</a>
+    </ng-template>
+  </div>
+</header>
